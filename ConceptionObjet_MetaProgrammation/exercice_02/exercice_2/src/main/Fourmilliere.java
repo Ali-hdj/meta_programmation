@@ -19,6 +19,10 @@ public class Fourmilliere {
 		super();
 		this.fourmis = fourmis;
 	}
+
+	public void addFourmis(Fourmis f){
+		fourmis.add(f);
+	}
 	
 	
 	
