@@ -9,6 +9,48 @@ public class Fourmi implements AccepterUnVisiteur{
 	
 	
 	
+	public int getAge() {
+		return age;
+	}
+
+
+
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+
+
+
+	public boolean isVivante() {
+		return vivante;
+	}
+
+
+
+
+	public void setVivante(boolean vivante) {
+		this.vivante = vivante;
+	}
+
+
+
+
+	public int getAgeMax() {
+		return ageMax;
+	}
+
+
+
+
+	public void setAgeMax(int ageMax) {
+		this.ageMax = ageMax;
+	}
+
+
+
+
 	public Fourmi(int age, boolean vivante, int ageMax) {
 		super();
 		this.age = age;
@@ -21,7 +63,7 @@ public class Fourmi implements AccepterUnVisiteur{
 
 	@Override
 	public void accept(Visitor v) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 	

@@ -5,19 +5,28 @@ public class GestionVieVisitor implements Visitor {
 	@Override
 	public void visiterOuvriere(Ouvriere o) {
 		
+		if(o.getAge()>o.getAgeMax())
+		{
+			o.setVivante(false);
+		}
 		
 	}
 
 	@Override
 	public void visiterReine(Reine r) {
-		// TODO Auto-generated method stub
+		if(r.getAge()>r.getAgeMax())
+		{
+			r.setVivante(false);
+		}	
 		
 	}
 
 	@Override
 	public void visiterSoldat(Soldat s) {
-		// TODO Auto-generated method stub
-		
+		if(s.getAge()>s.getAgeMax())
+		{
+			s.setVivante(false);
+		}
 	}
 	
 
