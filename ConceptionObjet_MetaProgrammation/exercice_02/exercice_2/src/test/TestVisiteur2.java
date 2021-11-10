@@ -17,9 +17,12 @@ class TestVisiteur2 {
 	List<Reine> rienes;
 	List <Soldat> soldats;
 	
+	
+	
 	@Before
 	void init()
 	{
+		this.ouvrieres=new ArrayList<>();
 		
 	}
 	@Test
