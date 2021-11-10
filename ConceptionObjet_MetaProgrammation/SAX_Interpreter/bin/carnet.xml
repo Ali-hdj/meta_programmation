@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Carnet>
+	<Contact  nom="ali" numero="0668392121" adresse="07 rue hoche 29200 brest">
+		<Informations>
+			<sport nom="football"/>
+			<etudes nom="informatique"/>
+			<niveau nom="bac+5"/>
+		</Informations>
+	</Contact>
+	<Contact  nom="tibolt" numero="0668391777">
+		<Informations>
+			<sport nom="natation"/>
+			<etudes nom="informatique"/>
+			<niveau nom="bac+5"/>
+		</Informations>
+	</Contact>
+	<Contact  nom="noel" numero="0778391221">
+		<Informations>
+			<etudes nom="chimie"/>
+			<niveau nom="bac+2"/>
+			</Informations>
+		</Contact>
+</Carnet>

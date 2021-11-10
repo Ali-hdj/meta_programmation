@@ -11,11 +11,28 @@ public class Contact {
     private Map<String,String> infomrmations;
     
     
-    public Contact(String nom,String numerotel)
+    public String getAdresse() {
+		return adresse;
+	}
+
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
+	}
+
+	public Map<String, String> getInfomrmations() {
+		return infomrmations;
+	}
+
+	public void setInfomrmations(Map<String, String> infomrmations) {
+		this.infomrmations = infomrmations;
+	}
+
+	public Contact(String nom,String numerotel,String adresse)
     {
     	this.nom=nom;
     	this.numerotel=numerotel;
     	this.infomrmations=new HashMap<>();
+    	this.adresse=adresse;
     	
     }
     
@@ -31,10 +48,10 @@ public class Contact {
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-	public String getNumerpt() {
+	public String getNumerotel() {
 		return numerotel;
 	}
-	public void setNumerpt(String numerotel) {
+	public void setNumerotel(String numerotel) {
 		this.numerotel = numerotel;
 	}
 

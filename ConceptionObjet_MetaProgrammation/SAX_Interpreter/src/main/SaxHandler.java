@@ -16,7 +16,7 @@ public class SaxHandler extends DefaultHandler {
 
     private Carnet carnet;
     private StringBuilder elementValue;
-    private boolean flagInformations=false;
+    private boolean flagInformations=false; // flag information à la lecture de la balise informations 
     private Contact contactEnCours; // le contact actuel en cours de construction 
 
     
@@ -42,17 +42,15 @@ public class SaxHandler extends DefaultHandler {
     @Override
     public void startElement(String uri, String lName, String qName, Attributes attributs) throws SAXException {
     		
-    	System.out.println("uri"+ uri+" lName "+lName+" qName "+qName);
     	Map<String,String> atributsMapping=new HashMap<>();
-    	
-    	for (int index = 0; index < attributs.getLength(); index++) {
-   		atributsMapping.put(attributs.getLocalName (index), attributs.getValue (index));   		 }
+    	for (int index = 0; index < attributs.getLength(); index++){
+    		atributsMapping.put(attributs.getLocalName (index), attributs.getValue (index));
+    																}
     	
     	switch(qName)
     	{
     	case "Contact":
-    		this.contactEnCours=new Contact(atributsMapping.get("nom"),atributsMapping.get("numero"));
-    		this.carnet.ajoutContact(this.contactEnCours);
+    		this.contactEnCours=new Contact(atributsMapping.get("nom"),atributsMapping.get("numero"),atributsMapping.get("adresse"));
     		break;
     	case "Type":this.carnet.setType(atributsMapping.get("type"));
     		break;
@@ -62,8 +60,7 @@ public class SaxHandler extends DefaultHandler {
     		if(this.flagInformations) {
     		this.contactEnCours.ajoutInformation(qName,attributs.getValue (0));}
     		break;
-    	
-    }
+    	}
     	
         }
     
@@ -72,10 +69,11 @@ public class SaxHandler extends DefaultHandler {
     public void endElement(String uri, String localName, String qName) throws SAXException {
         switch (qName) {
             case "Carnet":
-            	 System.out.println("end carnet ");
-                break;
+            	 System.out.println("Carnet crée");
+                 break;
             case "Contact":
-                System.out.println("end contact ");
+            	this.carnet.ajoutContact(this.contactEnCours);
+                System.out.println("contact ajouté au carnet ");
                 break;
             case "Informations":this.flagInformations=false;
             	break;
